@@ -1,0 +1,55 @@
+<templateSet group="JavaJIDJunit5">
+  <template name="tm" value="@org.junit.jupiter.api.Test&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_NAME$&quot;)&#10;void $METHOD_NAME$() {&#10;  // GIVEN&#10;  $END$&#10;  // WHEN&#10;  &#10;  // THEN&#10;  org.assertj.core.api.Assertions.fail(&quot;To be implemented&quot;);&#10;}" description="JUnit 5 test method" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TEST_NAME" expression="" defaultValue="My test" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="camelCase(TEST_NAME)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tbe" value="@org.junit.jupiter.api.BeforeEach&#10;void setup() {&#10;    $END$&#10;}" description="JUnit 5 before each" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tba" value="@org.junit.jupiter.api.BeforeAll&#10;static void setupAll() {&#10;    $END$&#10;}" description="JUnit 5 before all" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tae" value="@org.junit.jupiter.api.AfterEach&#10;void teardown() {&#10;    $END$&#10;}" description="JUnit 5 after each" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="taa" value="@org.junit.jupiter.api.AfterAll&#10;static void teardownAll() {&#10;    $END$&#10;}" description="JUnit 5 after all" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tpv" value="@org.junit.jupiter.params.ParameterizedTest&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_NAME$&quot;)&#10;@org.junit.jupiter.params.provider.ValueSource(strings = {$VALUES$})&#10;@org.junit.jupiter.params.provider.NullAndEmptySource&#10;void $METHOD_NAME$(String input) {&#10;  // GIVEN&#10;  $END$&#10;  // WHEN&#10;  &#10;  // THEN&#10;  org.assertj.core.api.Assertions.fail(&quot;To be implemented&quot;);&#10;}" description="JUnit 5 test parameter method value source with strings" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TEST_NAME" expression="" defaultValue="My test" alwaysStopAt="true" />
+    <variable name="VALUES" expression="" defaultValue="&quot;\&quot;val1\&quot;, \&quot;val2\&quot;&quot;" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="camelCase(TEST_NAME)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tpm" value="@org.junit.jupiter.params.ParameterizedTest&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_NAME$&quot;)&#10;@org.junit.jupiter.params.provider.MethodSource(&quot;$SOURCE_NAME$&quot;)&#10;void $METHOD_NAME$($CLAZZ_INPUT$ input, $CLAZZ_EXPECTED$ expected) {&#10;  // GIVEN&#10;  $END$&#10;  // WHEN&#10;  &#10;  // THEN&#10;  org.assertj.core.api.Assertions.fail(&quot;To be implemented&quot;);&#10;}&#10;&#10;private static Stream&lt;org.junit.jupiter.params.provider.Arguments&gt; $SOURCE_NAME$() {&#10;  &#10;  return java.util.stream.Stream.of(&#10;    org.junit.jupiter.params.provider.Arguments.of(new $CLAZZ_INPUT$(), new $CLAZZ_EXPECTED$()),&#10;    org.junit.jupiter.params.provider.Arguments.of(new $CLAZZ_INPUT$(), new $CLAZZ_EXPECTED$())&#10;  );&#10;}" description="JUnit 5 test parameter method - method source" toReformat="true" toShortenFQNames="true">
+    <variable name="TEST_NAME" expression="" defaultValue="My test" alwaysStopAt="true" />
+    <variable name="SOURCE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="camelCase(TEST_NAME)" defaultValue="" alwaysStopAt="false" />
+    <variable name="CLAZZ_INPUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLAZZ_EXPECTED" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="tpe" value="@org.junit.jupiter.params.ParameterizedTest&#10;@org.junit.jupiter.api.DisplayName(&quot;$TEST_NAME$&quot;)&#10;@org.junit.jupiter.params.provider.EnumSource($CLAZZ$.class)&#10;void $METHOD_NAME$($CLAZZ$ input) {&#10;  // GIVEN&#10;  $END$&#10;  // WHEN&#10;  &#10;  // THEN&#10;  org.assertj.core.api.Assertions.fail(&quot;To be implemented&quot;);&#10;}&#10;" description="JUnit 5 test parameter method - enum source" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TEST_NAME" expression="" defaultValue="My test" alwaysStopAt="true" />
+    <variable name="CLAZZ" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="camelCase(TEST_NAME)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
